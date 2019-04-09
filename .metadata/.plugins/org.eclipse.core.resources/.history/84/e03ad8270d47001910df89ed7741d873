@@ -1,0 +1,81 @@
+package no.hvl.dat102;
+
+public class BSTre<T extends Comparable<T>> implements BSTreADT<T> {
+
+	private BinaerTreNode<T> rot;
+
+	public BSTre() {
+		rot = null;
+	}
+
+	public BSTre(BinaerTreNode<T> r) {
+		rot = r;
+	}
+
+	@Override
+	public int antall() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean erTom() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void leggTil(T element) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public T finn(T element) {
+
+		return finnNode(element, rot);
+	}
+
+	private T finnNode(T element, BinaerTreNode<T> p) {
+		int sml = element.compareTo(p.getElement());
+		T svar = null;
+
+		if (sml == 0) {// basis funnet
+			svar = p.getElement();
+		} else if (sml < 0) {
+			svar = finnNode(element, p.getVenstre());
+		} else {
+			svar = finnNode(element, p.getHoyre());
+		}
+		return svar;
+	}
+
+	@Override
+	public T finnMin() {
+
+		// TODO Auto-generated method stub
+		return null;
+
+	}
+
+	@Override
+	public T finnMaks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T fjernMin() {
+		
+		
+		
+		return null;
+	}
+
+	@Override
+	public T fjernMaks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

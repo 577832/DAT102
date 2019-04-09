@@ -1,0 +1,20 @@
+package no.hvl.dat102.Rekursjon;
+
+import java.util.Scanner;
+public class Kladd5 {
+
+	public static void main(String[] args) {
+		System.out.println("Oppgi et positivt heltall: ");
+		Scanner scanner = new Scanner(System.in); 
+		int n = scanner.nextInt(); 
+		System.out.println(n + "Snudd = " + Kladd5.snuTall(n));
+		
+	}
+	
+	public static void snuTall(int tall) {
+		
+		int snudd; 
+		
+	}
+	
+}

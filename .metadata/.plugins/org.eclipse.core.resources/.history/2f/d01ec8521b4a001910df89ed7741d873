@@ -1,0 +1,15 @@
+package no.hvl.dat102;
+
+import java.util.Scanner;
+
+public class Oppgave1 {
+
+	public static void main(String[] args) {
+	
+	
+	Scanner scan = new Scanner(System.in); 
+	System.out.println("Skriv inn tallet for n: ");
+	int tall = scan.nextInt(); 
+	
+	}
+}

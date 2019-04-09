@@ -1,0 +1,12 @@
+package no.hvl.dat102;
+
+public class SolveTowers {
+
+	public static void main(String[] args) {
+		
+		TårnHanoi towers = new TårnHanoi(3); 
+		towers.solve(); 
+
+	}
+
+}

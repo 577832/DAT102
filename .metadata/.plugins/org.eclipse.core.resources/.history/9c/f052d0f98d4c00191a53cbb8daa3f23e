@@ -1,0 +1,26 @@
+package no.hvl.dat102;
+
+public class BST2 {
+
+
+	
+	public void visInorden() {
+		visInordenRek(rot); 
+		System.out.println();
+	}
+
+	//VU før HU, pre, in, post
+	private void visInordenRek(BinaerTreNode<T> p) {
+		if(p!=null) {
+			visInordenRek(p.getVenstre());
+			System.out.println(p.getElement() + "");
+			visInordenRek(p.getHoyre());
+		}// else: basis gjør ingenting
+		
+		
+	}
+	
+	
+}
+
+

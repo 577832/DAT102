@@ -1,0 +1,54 @@
+package no.hvl.dat102;
+
+import java.util.Scanner;
+public class Meny {
+	
+	private Tekstgrensesnitt tekstgr; 
+	private CDarkivADT cda; 
+	public static final Scanner IN = new Scanner(System.in);
+	public static final String SKILLE = "---------------------";
+	
+	public Meny(CDarkivADT cda) {
+		tekstgr = new Tekstgrensesnitt(); 
+		this.cda = cda; 
+	}
+	
+	public void start() {
+		boolean gyldig = false ;
+		String filnavn = " "; 
+		
+		do {
+			System.out.println("Vil du jobbe med et eksisterende arkiv? Ja/Nei");
+			String svar = IN.nextLine();
+			System.out.println(SKILLE);
+			
+			
+			if(svar.equals("ja")) {
+				System.out.println("Skriv inn filnavnet du vil jobbe med: ");
+				filnavn = IN.nextLine();
+				System.out.println(SKILLE);
+				cda = Fil.lesFraFil(filnavn); 
+				gyldig = true; 
+				
+			}else if(svar.equals("nei")) {
+				System.out.println("Skriv inn navnet på den nye filen: ");
+				filnavn = IN.nextLine(); 
+				System.out.println(SKILLE);
+				gyldig = true; 
+			}else {
+				System.out.println(svar + " er et ugyldig svar ");
+			}
+		} while(!gyldig);
+		
+		String meny = "Operasjoner du kan utføre: "
+				+ "1, Legg inn en ny CD" +"\n"
+				+ "2, Slette en CD" + "\n"
+				+ "3, Hente CD med delstreng" + "\n"
+				+ "4. Hente artister med delstreng" + "\n"
+				+ "5. Hente antall CD'er" + "\n"
+				+ "6 Skriv ut statistikk og CD-arkivet" + "\n"
+				+ "0. Lagre og avslutt";
+		System.out.println(meny);
+	}
+
+}

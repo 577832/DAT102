@@ -1,0 +1,17 @@
+package no.hvl.dat102;
+
+public class MainB {
+
+	//Rekursiv metode for å finne antall siffer i et heltall
+	//Bare positive tall
+	
+	public static int antallSiffer(int t) {
+		
+		
+		if(t < 10) { //basis
+			return 1;
+		}else {
+			return antallSiffer(t/10) + 1;
+		}
+	}
+}

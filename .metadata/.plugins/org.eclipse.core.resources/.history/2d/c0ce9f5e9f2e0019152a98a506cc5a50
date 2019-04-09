@@ -1,0 +1,33 @@
+package no.hvl.dat102;
+
+public class MainB {
+
+	//Rekursiv metode for å finne antall siffer i et heltall
+	//Bare positive tall
+	
+	public static int antallSiffer(int t) {
+		
+		
+		if(t < 10) { //basis
+			return 1;
+		}else {
+			return antallSiffer(t/10) + 1;
+		}
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(antallSiffer(2345));
+		System.out.println((snuStreng("Penis")));
+	}
+	
+	public static String snuStreng(String s) {
+		if(s.length() == 1) {
+			return s;
+		}else {
+			String resten = s.substring(1);
+			return snuStreng(resten + s.charAt(0));
+		}
+		
+		
+	}
+}

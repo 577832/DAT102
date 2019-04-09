@@ -1,0 +1,13 @@
+package no.hvl.dat102;
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import no.hvl.dat102.SirkulaerKoe.SirKoe;
+import no.hvl.dat102.exception.EmptyCollectionException;
+public class SirKoeTest {
+
+}

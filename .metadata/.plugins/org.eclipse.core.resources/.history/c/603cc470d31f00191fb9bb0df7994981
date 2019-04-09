@@ -1,0 +1,99 @@
+package no.hvl.dat102;
+
+
+import java.util.Scanner;
+
+
+
+public class Tekstgrensesnitt {
+
+
+	// lese opplysningene om en CD fra tastatur
+	 public CD lesCD() {
+		 
+		 Scanner scan = new Scanner(System.in);
+		 System.out.println("Nummer på CD");
+		 int cdNummer = scan.nextInt(); 
+		 
+		 System.out.println("Navn på artist");
+		 String artist = scan.nextLine();
+		 
+		 System.out.println("Navn på tittel");
+		 String tittel = scan.nextLine(); 
+		 
+		 System.out.println("År CD'en kom ut");
+		 int year = scan.nextInt(); 
+		 
+		 System.out.println("Sjanger på CD");
+		 Sjanger sjanger = Sjanger.finnSjanger(scan.nextLine());
+		 
+		 System.out.println("Plateselskap");
+		 String plateselskap = scan.nextLine(); 
+		 
+	
+		
+		CD lestCD = new CD(cdNummer, artist, tittel, year, sjanger, plateselskap); 
+		return lestCD; 
+		
+		 
+	 }
+	 
+	// vise en CD med alle opplysninger på skjerm (husk tekst for sjanger)
+	 public void visCD(CD cd) {
+		 
+		 System.out.println("CD-nummer: " + cd.getCdNummer() + "\n" +
+				 "Artist: " + cd.getArtist() + "\n" + 
+				 "Tittel: " + cd.getTittel() + "\n" + 
+				 "Lanseringsår: " + cd.getYear() + "\n" +
+				 "Sjanger: " + cd.getSjanger() + "\n" + 
+				 "Plateselskap: " + cd.getPlateselskap()); 
+	 }
+	// Skrive ut alle CD-er med en spesiell delstreng i tittelen
+	 public void skrivUtCdDelstrengITittel(CDarkivADT cda, String delstreng){
+	
+		 for(CD i: cda.hentCdTabell()) {
+			 if(i.getTittel().contains(delstreng)) {
+				 visCD(i); 
+				 System.out.println("\n");
+			 }
+		 }
+	 }
+	// Skriver ut alle CD-er av en artist / en gruppe
+	 public void skrivUtCdArtist(CDarkivADT cda, String delstreng) {
+		 
+		 for(CD i: cda.hentCdTabell()) {
+			 if(i.getArtist().contains(delstreng)) {
+				 visCD(i); 
+				 System.out.println("\n");
+			 }
+		 }
+		 
+	 }
+	// Skrive ut en enkel statistikk som inneholder antall CD-er totalt
+	// og hvor mange det er i hver sjanger
+	 public void skrivUtStatistikk(CDarkivADT cda){
+		
+		 int teller = 0; 
+		 
+		 for(CD i: cda.hentCdTabell()) {
+			 teller++; 
+		 }
+		 System.out.println("Antall cd'er: " + teller);
+		 
+		 for(Sjanger sj : Sjanger.values()) {
+			 System.out.println(sj.name() + ": " + cda.antallSjanger(sj));
+		 }
+		 
+	 }
+	 public void Operasjoner() {
+		 String meny = "Operasjoner du kan utføre: " +"\n"
+					+ "1, Legg inn en ny CD" +"\n"
+					+ "2, Slette en CD" + "\n"
+					+ "3, Hente CD med delstreng" + "\n"
+					+ "4. Hente artister med delstreng" + "\n"
+					+ "5. Hente antall CD'er" + "\n"
+					+ "6 Skriv ut statistikk og CD-arkivet" + "\n"
+					+ "0. Lagre og avslutt";
+			System.out.println(meny);
+	 }
+}

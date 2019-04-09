@@ -1,0 +1,16 @@
+package no.hvl.dat102;
+
+import java.util.Scanner;
+
+public class Oppgave1 {
+
+	public static void main(String[] args) {
+	
+	
+	Scanner scanner = new Scanner(System.in); 
+	int tall = scanner.nextInt(); 
+	
+	System.out.println("Tallet er " + tall);
+	
+	}
+}

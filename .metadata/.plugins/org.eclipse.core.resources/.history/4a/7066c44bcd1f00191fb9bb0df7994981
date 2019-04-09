@@ -1,0 +1,101 @@
+package no.hvl.dat102;
+
+public abstract class CDarkiv implements CDarkivADT {
+
+	// Instansvariable
+	private CD[] cdTabell;
+	private int antall;
+
+	public CDarkiv(int storrelse) {
+		cdTabell = new CD[storrelse];
+	}
+
+	public void leggtilCD(CD nyCd) {
+		cdTabell[antall] = nyCd;
+		antall++;
+
+	}
+
+	public boolean slettCd(int cdNr) {
+		boolean slettet = false;
+		int i = 0;
+
+		while (i < antall && !slettet) {
+			if (cdTabell[i].getCdNummer() == cdNr) {
+				cdTabell[i] = null;
+				antall--;
+				slettet = true;
+			}
+			i++;
+		}
+		return slettet;
+
+	}
+
+	public CD[] sokTittel(String delstreng) {
+		int lengde = 0;
+
+		for (int i = 0; i < antall; i++) {
+			if (cdTabell[i].getTittel().contains(delstreng)) {
+				lengde++;
+			}
+		}
+
+		CD[] delstrengtab = new CD[lengde];
+		int i = 0;
+
+		while (i < lengde) {
+			for (int j = 0; j < antall; j++) {
+				if (cdTabell[j].getTittel().contains(delstreng)) {
+					delstrengtab[i] = cdTabell[j];
+					i++;
+				}
+			}
+
+		}
+		return delstrengtab;
+
+	}
+
+	public CD[] sokArtist(String delstreng) {
+
+		int lengde = 0; 
+		for(int i = 0; i<antall; i++) {
+			if(cdTabell[i].getArtist().contains(delstreng)) {
+				lengde++; 
+			}
+		}
+		CD[] artistTab = new CD[lengde]; 
+		int i = 0; 
+		
+		while(i<lengde) {
+			for(int j = 0; j<antall; j++) {
+				if(cdTabell[j].getArtist().contains(delstreng)) {
+					artistTab[i] = cdTabell[j]; 
+					i++; 
+				}
+			}
+		}
+		return artistTab; 
+	}
+
+	public int antallSjanger(Sjanger sjanger) {
+		
+		int antallSjanger = 0; 
+		
+		for(int i = 0; i<antall; i++) {
+			if(cdTabell[i].getSjanger() == sjanger) {
+				antallSjanger ++; 
+			}
+		}
+		return antallSjanger; 
+
+	}
+
+	public int antall() {
+		return antall; 
+	}
+	
+
+
+}

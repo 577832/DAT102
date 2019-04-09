@@ -1,0 +1,51 @@
+package no.hvl.dat102.oppgave2;
+
+import java.util.Iterator;
+
+import java.util.Random;
+
+import no.hvl.dat102.mengde.adt.*;
+
+
+public class Datakontakt {
+
+	private Medlem[] medlemstabell; 
+	private int antallMedlemmer; 
+	
+	public Datakontakt() {
+		
+		medlemstabell = new Medlem[100];
+		antallMedlemmer = 0;
+	}
+	public Datakontakt(int størrelse) {
+		medlemstabell = new Medlem[størrelse];
+		antallMedlemmer = 0; 
+	}
+	public void leggTilMedlem(Medlem person) {
+			
+			medlemstabell[antallMedlemmer] = person; 
+			antallMedlemmer++; 
+		}
+		
+	public int finnMedlemIndeks(String medlemsnavn) {
+		
+		int i = 0; 
+		boolean funnet = false; 
+		
+		while(i<antallMedlemmer && !funnet) {
+			if(medlemstabell[i].getNavn().equals(medlemsnavn)) {
+				funnet = true; 
+			}else {
+				i++; 
+			}
+		}
+		if(!funnet) {
+			i = -1; 
+		}
+		return i; 
+		
+	}
+	
+	
+	
+}

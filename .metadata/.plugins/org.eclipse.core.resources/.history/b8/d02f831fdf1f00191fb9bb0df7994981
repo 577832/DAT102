@@ -1,0 +1,57 @@
+package no.hvl.dat102;
+
+import  java.util.Scanner;
+
+import static java.lang.Integer.*;
+
+public class Meny {
+
+	private Tekstgrensesnitt tekstgr;
+	private CDarkivADT cda;
+	public static final Scanner IN = new Scanner(System.in);
+	public static final String SKILLE = "---------------------";
+
+	public Meny(CDarkivADT cda) {
+		tekstgr = new Tekstgrensesnitt();
+		this.cda = cda;
+	}
+
+	public void start() {
+		boolean gyldig = false ;
+		String filnavn = " "; 
+		
+		do {
+			System.out.println("Vil du jobbe med et eksisterende arkiv? Ja/Nei");
+			String svar = IN.nextLine();
+			System.out.println(SKILLE);
+			
+			
+			if(svar.equals("ja")) {
+				System.out.println("Skriv inn filnavnet du vil jobbe med: ");
+				filnavn = IN.nextLine();
+				System.out.println(SKILLE);
+				cda = Fil.lesFraFil(filnavn); 
+				gyldig = true; 
+				
+			}else if(svar.equals("nei")) {
+				System.out.println("Skriv inn navnet på den nye filen: ");
+				filnavn = IN.nextLine(); 
+				System.out.println(SKILLE);
+				gyldig = true; 
+			}else {
+				System.out.println(svar + " er et ugyldig svar ");
+			}
+		} while(!gyldig);
+		
+		Tekstgrensesnitt.Operasjoner(); 
+		
+		boolean kjører = true; 
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,49 @@
+package no.hvl.dat102.oppgave2;
+import no.hvl.dat102.mengde.kjedet.KjedetMengde;
+import no.hvl.dat102.mengde.adt.MengdeADT;
+
+public class Medlem {
+
+		 private String navn;
+		 private KjedetMengde<Hobby> hobbyer; //Eller TabellMengde
+		 private int statusIndeks;
+		 
+		 public Medlem(String navn, KjedetMengde<Hobby> hobby, int statusIndeks) {
+			  
+			 this.navn = navn; 
+			 this.hobbyer = hobby;
+			 this.statusIndeks = statusIndeks;
+			 
+		 }
+		 
+
+		public String getNavn() {
+			return navn;
+		}
+
+		public void setNavn(String navn) {
+			this.navn = navn;
+		}
+
+		public KjedetMengde<Hobby> getHobbyer() {
+			return hobbyer;
+		}
+
+		public void setHobbyer(KjedetMengde<Hobby> hobbyer) {
+			this.hobbyer = hobbyer;
+		}
+
+		public int getStatusIndeks() {
+			return statusIndeks;
+		}
+
+		public void setStatusIndeks(int statusIndeks) {
+			this.statusIndeks = statusIndeks;
+		}
+		public void skrivUt() {
+			
+			System.out.println(navn + hobbyer + statusIndeks);
+			
+		}
+		 
+}

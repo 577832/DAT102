@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;EmptyCollectionException.java&apos; to &apos;BalanseringU/src/no.hvl.dat102.exception&apos;&#x0D;&#x0A;- Original project: &apos;BSTre&apos;&#x0D;&#x0A;- Destination element: &apos;BalanseringU/src/no.hvl.dat102.exception&apos;&#x0D;&#x0A;- Original element: &apos;no.hvl.dat102.EmptyCollectionException.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=BalanseringU/src&lt;no.hvl.dat102.exception" element1="/src&lt;no.hvl.dat102{EmptyCollectionException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1552646928511" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,15 @@
+package no.hvl.dat102.Sortering;
+
+public class Boblesortering {
+
+	
+	public static <T extends Comparable<T>> void bubbleSort(T[] data) {
+		
+		int position, scan; 
+		T temp;
+		
+		for(position = data.length-1; position >= 0; position--) {
+			
+		}
+	}
+}
