@@ -22,4 +22,5 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="no.hvl.dat102.Sortering.SorteringUtvalg"/>
+    <fullyQualifiedTypeName name="no.hvl.dat102.KjedetBSTre"/>
 </qualifiedTypeNameHistroy>

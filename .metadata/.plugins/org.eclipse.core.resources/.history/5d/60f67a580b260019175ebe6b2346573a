@@ -1,7 +1,0 @@
-package no.hvl.dat102.KjedetKoe;
-
-import ADT.KoeADT;  
-
-public class KjedetKoe implements KoeADT {
-
-}

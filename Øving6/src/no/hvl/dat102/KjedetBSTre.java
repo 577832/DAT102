@@ -1,5 +1,7 @@
 package no.hvl.dat102;
 
+import java.util.Iterator;
+
 import no.hvl.dat102.adt.BSTreADT;
 
 //********************************************************************
@@ -7,7 +9,7 @@ import no.hvl.dat102.adt.BSTreADT;
 //
 //********************************************************************
 
-public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
+public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>, Iterable<T> {
 
 	private int antall;
 	private BinaerTreNode<T> rot;
@@ -67,8 +69,8 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	}
 
 	/******************************************************************
-	 * Legger det spesifiserte elementet p� passende plass i dette bin�re s�ketreet.
-	 * Like elementer blir lagt til h�yre.
+	 * Legger det spesifiserte elementet p� passende plass i dette bin�re
+	 * s�ketreet. Like elementer blir lagt til h�yre.
 	 ******************************************************************/
 
 	public void leggTil2(T element) {
@@ -202,8 +204,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	 ******************************************************************************/
 	public T finn(T element) {
 		// S�k med rekursiv hjelpemetode
-		
-		
 
 		return finnRek(element, rot);
 	}
@@ -283,7 +283,6 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 
 	public int finnHoyde() {
 
-		
 		return finnHoydeRek(rot);
 	}
 
@@ -294,6 +293,12 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 		}
 
 		return Math.max(finnHoydeRek(p.getVenstre()), finnHoydeRek(p.getHoyre())) + 1;
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+
+		return new InordenIterator(rot);
 	}
 }// class
 

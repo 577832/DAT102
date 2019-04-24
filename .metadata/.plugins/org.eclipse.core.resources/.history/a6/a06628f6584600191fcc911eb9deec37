@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author chris
- *
- */
-module Øving4 {exports adt;exports exception;exports no.hvl.dat102.kjedet;exports sirkulaer;exports no.hvl.dat102.exception;exports no.hvl.dat102.adt;exports kjedet;exports tabell;exports no.hvl.dat102.klient;exports no.hvl.dat102.tabell;exports klient;exports no.hvl.dat102.sirkulaer;}

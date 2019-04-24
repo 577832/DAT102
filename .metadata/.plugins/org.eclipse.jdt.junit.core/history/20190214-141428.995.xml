@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="KjedetMengdeTest" project="MengdeU" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="Test.KjedetMengdeTest" time="0.001">
-    <testcase name="differensMedDisjunktiv" classname="Test.KjedetMengdeTest" time="0.0"/>
-    <testcase name="unionMedDisjunktiv" classname="Test.KjedetMengdeTest" time="0.0"/>
-    <testcase name="unionMedFelles" classname="Test.KjedetMengdeTest" time="0.0"/>
-    <testcase name="snittMedDisjunktive" classname="Test.KjedetMengdeTest" time="0.0"/>
-    <testcase name="differensMedFelles" classname="Test.KjedetMengdeTest" time="0.0"/>
-  </testsuite>
-</testrun>
